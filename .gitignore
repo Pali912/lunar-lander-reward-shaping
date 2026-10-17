@@ -1,0 +1,14 @@
+@"
+.venv/
+__pycache__/
+*.pyc
+*.zip
+models/
+logs/
+tensorboard/
+runs/
+videos/
+*.mp4
+.vscode/
+Thumbs.db
+"@ | Set-Content -Path .gitignore -Encoding ascii
