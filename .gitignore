@@ -1,7 +1,11 @@
-@"
+# Virtual environment
 .venv/
+
+# Python
 __pycache__/
 *.pyc
+
+# Saved models, logs and big media (recreate or host elsewhere)
 *.zip
 models/
 logs/
@@ -9,6 +13,10 @@ tensorboard/
 runs/
 videos/
 *.mp4
+# ...except the small showcase video made by make_showcase.py
+!assets/*.mp4
+
+# Editor / OS
 .vscode/
+.DS_Store
 Thumbs.db
-"@ | Set-Content -Path .gitignore -Encoding ascii
