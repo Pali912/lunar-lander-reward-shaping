@@ -6,12 +6,9 @@ Based on the tutorial "Training an AI to land a rocket with reward shaping" by H
 
 ## The three behaviors
 
-| Normal landing | Reward hacked: hovering | The fix |
-|---|---|---|
-| ![baseline landing](assets/baseline.gif) | ![hover hack](assets/hover_hack.gif) | ![fixed landing](assets/improvement_fix.gif) |
-| Built-in reward only | +1 per frame while upright and slow | Pay for improvement, plus a small per-frame fee |
+![Normal landing, reward hacked hover and the fix, side by side](assets/showcase.gif)
 
-Each GIF is one attempt from a seed 0 model, trimmed to the first 12 seconds. The numbers below come from 20 attempts, not from the GIFs.
+Each panel is one attempt from a seed 0 model, trimmed to 14 seconds. The finished landings hold their last frame while the hover keeps going. The numbers below come from 20 attempts, not from these clips. A video version is in [`assets/showcase.mp4`](assets/showcase.mp4), and the three clips are also saved as separate GIFs in `assets/`.
 
 ## Results
 
@@ -73,9 +70,10 @@ python play.py diagnose models/ppo_hover_hack   # hovering or on the ground?
 python play.py watch models/ppo_hover_hack      # watch it fly
 python play.py record models/ppo_hover_hack     # save videos to videos/
 python make_gifs.py                             # turn videos into GIFs in assets/
+python make_showcase.py                         # labeled side-by-side video and GIF
 ```
 
-Models and videos are not in the repo, so you train them yourself. Each model is a 1,000,000 step PPO run with 16 parallel environments and takes about 15 to 20 minutes on a laptop CPU, no GPU needed.
+Models and raw recordings are not in the repo, so you train and record them yourself. Each model is a 1,000,000 step PPO run with 16 parallel environments and takes about 15 to 20 minutes on a laptop CPU, no GPU needed.
 
 ## Limits worth knowing
 
@@ -95,6 +93,7 @@ Models and videos are not in the repo, so you train them yourself. Each model is
 | `reward_wrapper.py` | the three reward rules |
 | `play.py` | eval, diagnose, watch and record |
 | `make_gifs.py` | turn recordings into GIFs |
+| `make_showcase.py` | labeled side-by-side video and GIF of the three behaviors |
 | `random_lander.py` | watch a random pilot crash |
 | `project.md` | project notes and progress log |
 | `decisions.md` | every decision, with the reasoning |

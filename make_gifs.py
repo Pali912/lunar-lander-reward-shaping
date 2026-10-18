@@ -19,8 +19,8 @@ CLIPS = {
     "improvement_fix": ["videos/ppo_improvement_fix-episode-0.mp4"],
 }
 MAX_SECONDS = 12
-WIDTH = 400
-FPS = 15
+WIDTH = 600   # native width of the recordings, no downscaling blur
+FPS = 25
 
 os.makedirs("assets", exist_ok=True)
 
